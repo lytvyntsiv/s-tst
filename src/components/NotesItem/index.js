@@ -14,7 +14,6 @@ const NotesListItem = ({
 }) => {
   const [showNoteModal, setShowModal] = useState(false);
   const [openEditMode, setOpenEditMode] = useState(false);
-  const dispatch = useDispatch();
 
   const onShowNoteModal = useCallback(() => {
     setShowModal(false);
