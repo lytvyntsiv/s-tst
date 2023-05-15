@@ -17,6 +17,8 @@ const NoteForm = ({
   const onChangeNote = (e) => {
     e.preventDefault();
     changeNoteData &&
+      noteData.title !== "" &&
+      noteData.description !== "" &&
       changeNoteData({
         id,
         title: noteData.title,
@@ -27,6 +29,8 @@ const NoteForm = ({
   const onCreateNote = (e) => {
     e.preventDefault();
     createNewNote &&
+      noteData.title !== "" &&
+      noteData.description !== "" &&
       createNewNote({
         id: uuidv4(),
         title: noteData.title,
@@ -59,7 +63,7 @@ const NoteForm = ({
       {isCreateNote ? (
         <button onClick={onCreateNote}>Create new note</button>
       ) : (
-        <button onClick={onChangeNote}>Create note</button>
+        <button onClick={onChangeNote}>Update note</button>
       )}
     </form>
   );

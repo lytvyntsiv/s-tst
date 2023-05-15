@@ -15,7 +15,8 @@ export const notesSlice = createSlice({
     },
     handleEditNote: (state, action) => {
       const { id, title, description } = action.payload;
-      state.notes.map((note) => {
+
+      state.notes = state.notes.map((note) => {
         if (note.id === id) {
           return {
             ...note,

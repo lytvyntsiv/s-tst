@@ -54,7 +54,7 @@ const NotesListItem = ({
               description={description}
               title={title}
               id={id}
-              changeNoteData={(data) => dispatch(handleEditNote(data))}
+              changeNoteData={changeNoteData}
             />
           </div>
         )}

@@ -2,7 +2,7 @@ import React from "react";
 import NotesItem from "../NotesItem";
 import "./style.css";
 import { useDispatch, useSelector } from "react-redux";
-import { handleDeleteNote } from "../../store/app/notes";
+import { handleDeleteNote, handleEditNote } from "../../store/app/notes";
 
 const NotesList = () => {
   const notesList = useSelector((state) => state.notes.notes);
@@ -23,7 +23,7 @@ const NotesList = () => {
                 deleteNote={(id) => {
                   dispatch(handleDeleteNote(id));
                 }}
-                // changeNoteData={onChangeNotData}
+                changeNoteData={(data) => dispatch(handleEditNote(data))}
               />
             );
           })}
